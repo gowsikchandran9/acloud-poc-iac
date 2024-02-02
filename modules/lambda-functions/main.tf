@@ -27,5 +27,5 @@ resource "aws_lambda_function" "lambda-function" {
     }
   }
 
-  #tags = var.dt_tags
+  #tags = var.m_tags
 }

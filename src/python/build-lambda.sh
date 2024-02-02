@@ -16,7 +16,7 @@ cp __init__.py function/__init__.py
 python3 -m pip install \
   --platform manylinux2014_x86_64 \
   --implementation cp \
-  --python 3.9 \
+  --python 3.12 \
   --only-binary=:all: --upgrade \
   --target=function \
   -r requirements.txt
