@@ -1,0 +1,33 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing necessary dependencies"
+      # Add commands to install any dependencies your project may have
+
+  pre_build:
+    commands:
+      - echo "Pre-build steps"
+      # Add any commands that need to run before the build script
+
+  build:
+    commands:
+      - echo "Running build script"
+      - chmod +x build-all.sh  # Make sure the script is executable
+      - ./python/build-all.sh
+
+  post_build:
+    commands:
+      - echo "Post-build steps"
+      # Add any cleanup or post-build actions
+
+# If your build produces artifacts, specify them here
+artifacts:
+  files:
+    - '**/*'
+
+# If you need to store some files between build phases, use 'cache'
+cache:
+  paths:
+    - 'path/to/cache/directory'

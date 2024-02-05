@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8  # or any other dependencies you might need
+    commands:
+      - apt-get update
+      - apt-get install -y unzip
+      - curl -o terraform.zip -L https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
+      - unzip terraform.zip
+      - mv terraform /usr/local/bin/
+      - terraform --version
+
+  pre_build:
+    commands:
+      - cd deployments/development/user-management
+      - echo "Running Terraform Init..."
+      - terraform init
+
+  build:
+    commands:
+      - echo "Running Terraform Plan..."
+      - terraform plan
+
+  post_build:
+    commands:
+      - echo "Running Terraform Apply..."
+      - terraform apply -auto-approve
+      # Use -auto-approve with caution, especially in production environments
+
+artifacts:
+  files:
+    - '**/*'
