@@ -7,9 +7,7 @@ phases:
 
   pre_build:
     commands:
-      - echo "Fetching AWS account ID..."
-      - account_id=$(aws sts get-caller-identity --query 'Account' --output text)
-      - echo "AWS Account ID: $account_id"
+      - echo "pre_build"
 
   build:
     commands:
@@ -17,7 +15,7 @@ phases:
       - cd src/python
       - chmod +x build-all.sh
       - pwd
-      - ./build-all.sh $account_id
+      - ./build-all.sh $ACCOUNT_ID
 
   post_build:
     commands:
