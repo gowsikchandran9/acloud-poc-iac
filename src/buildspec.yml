@@ -6,15 +6,16 @@ phases:
       - echo "Installing necessary dependencies"
 
   pre_build:
-    commands:
-      - echo "Pre-build steps"
+    - echo "Fetching AWS account ID..."
+    - account_id=$(aws sts get-caller-identity --query 'Account' --output text)
+    - echo "AWS Account ID: $account_id"
 
   build:
     commands:
       - echo "Running build script"
       - cd src/python
       - chmod +x build-all.sh
-      - build-all.sh
+      - ./build-all.sh $account_id
 
   post_build:
     commands:

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 account_id=$1
 
 for i in $(ls -d */); do

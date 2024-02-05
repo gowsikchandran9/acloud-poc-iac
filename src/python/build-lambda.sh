@@ -1,3 +1,5 @@
+#!/bin/bash
+
 account_id=$1
 
 lambda_name=$(basename $(pwd))
