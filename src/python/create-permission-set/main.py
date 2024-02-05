@@ -2,7 +2,7 @@ import os
 import boto3
 
 def lambda_handler(event, context):
-    # Retrieve environment variables
+    # Retrieve Environment variables
     instance_arn = event['SSO_INSTANCE_ARN']
     permission_set_name = event['PERMISSION_SET_NAME']
     description = event['PERMISSION_SET_DESCRIPTION']
