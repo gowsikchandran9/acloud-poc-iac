@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8  # or any other dependencies you might need
+      python: 3.12
     commands:
       - apt-get update
       - apt-get install -y unzip
@@ -27,7 +27,6 @@ phases:
     commands:
       - echo "Running Terraform Apply..."
       - terraform apply -auto-approve
-      # Use -auto-approve with caution, especially in production environments
 
 artifacts:
   files:
