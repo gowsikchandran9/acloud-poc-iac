@@ -17,8 +17,8 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 module "user-management" {
-  source     = "../../../../modules/users-management"
+  source     = "../../../modules/users-management"
   aws_region = data.aws_region.current.name
   account_id = data.aws_caller_identity.current.account_id
-  stage      = "dev"
+  stage      = var.stage
 }

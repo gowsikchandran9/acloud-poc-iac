@@ -4,8 +4,10 @@ variable "aws_region" {
 
 variable "account_id" {
   description = "account ID"
+  default = "905418153167"
 }
 
 variable "stage" {
   description = "stage"
+  default = "dev"
 }
