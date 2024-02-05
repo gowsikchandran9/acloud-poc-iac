@@ -14,7 +14,7 @@ phases:
 
   pre_build:
     commands:
-      - cd deployments/development/user-management
+      - cd infra/terraform/deployments/development/user-management
       - echo "Running Terraform Init..."
       - terraform init
 
