@@ -4,6 +4,6 @@ variable "api_name" {
 }
 
 variable "api_description" {
-  description = ""
+  description = "this value describes api-gateway"
   default = "XEntry API"
 }
