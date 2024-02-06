@@ -12,19 +12,21 @@ phases:
       - mv terraform /usr/local/bin/
       - terraform --version
 
-  pre_build:
+  build:
     commands:
+      - cd infra/terraform/deployments/development/api-gateway
+      - echo "Running Terraform Init..."
+      - terraform init
+      - echo "Running Terraform Plan..."
+      - terraform plan
+      - echo "Running Terraform Apply..."
+      - terraform apply -auto-approve
+
       - cd infra/terraform/deployments/development/user-management
       - echo "Running Terraform Init..."
       - terraform init
-
-  build:
-    commands:
       - echo "Running Terraform Plan..."
       - terraform plan
-
-  post_build:
-    commands:
       - echo "Running Terraform Apply..."
       - terraform apply -auto-approve
 
