@@ -4,8 +4,8 @@ module "create-permissions-set" {
   resource_id = aws_api_gateway_resource.permission_set.id
 
   http_method          = "POST"
-  authorization        = "CUSTOM"
-  authorizer_id        = aws_api_gateway_authorizer.authorizer.id
+  authorization        = "NONE"
+#  authorizer_id        = aws_api_gateway_authorizer.authorizer.id
   api_key_required     = "false"
   status_code          = "200"
   request_validator_id = ""
