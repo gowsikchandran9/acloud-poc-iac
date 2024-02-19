@@ -14,9 +14,9 @@ variable "authorization" {
   description = ""
 }
 
-variable "authorizer_id" {
-  description = ""
-}
+#variable "authorizer_id" {
+#  description = ""
+#}
 
 variable "request_models" {
   description = ""
