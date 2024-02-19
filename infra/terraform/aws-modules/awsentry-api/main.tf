@@ -4,7 +4,7 @@ module "lambda_function_python" {
     "create-permission-set",
     "attach-managed-policy-to-permission-set",
     "associate-permission-set-to-account-and-users"
-    
+
 
   ])
   source = "../lambda-functions"
@@ -20,4 +20,14 @@ module "lambda_function_python" {
   handler                      = "main.lambda_handler"
   runtime                      = "python3.12"
 
+}
+
+module "api-gateway" {
+  source          = "../api-gateway"
+  api_description = var.api_description
+  api_name        = var.api_name
+}
+
+module "dynamo-db" {
+  source = "../dynamo-db"
 }

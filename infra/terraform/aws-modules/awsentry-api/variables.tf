@@ -11,5 +11,13 @@ variable "stage" {
 }
 
 variable "resource_prefix" {
-  default = "xentry"
+  default = "awsentry"
+}
+
+variable "api_description" {
+  description = "api_description"
+}
+
+variable "api_name" {
+  description = "api_name"
 }

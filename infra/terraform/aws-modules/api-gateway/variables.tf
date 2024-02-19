@@ -1,7 +1,7 @@
 variable "api_name" {
-  description = ""
+  description = "AWSEntry API"
 }
 
 variable "api_description" {
-  description = ""
+  description = "API for AWS Entry at Mercedes Benz for IDP with IAM Identity Center"
 }
