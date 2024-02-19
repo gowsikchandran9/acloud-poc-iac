@@ -14,15 +14,7 @@ phases:
 
   build:
     commands:
-      - cd infra/terraform/deployments/development/api-gateway
-      - echo "Running Terraform Init..."
-      - terraform init
-      - echo "Running Terraform Plan..."
-      - terraform plan
-      - echo "Running Terraform Apply..."
-      - terraform apply -auto-approve
-
-      - cd ../../user-management
+      - cd ../../api-gateway
       - echo "Running Terraform Init..."
       - terraform init
       - echo "Running Terraform Plan..."
