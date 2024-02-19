@@ -3,7 +3,8 @@ resource "aws_api_gateway_deployment" "deployment" {
 
   triggers = {
     redeployment = sha1(jsonencode([
-      aws_api_gateway_rest_api.AWSEntry.id
+      aws_api_gateway_rest_api.AWSEntry.id,
+      aws_api_gateway_resource.permission_set.id
     ]))
   }
 
