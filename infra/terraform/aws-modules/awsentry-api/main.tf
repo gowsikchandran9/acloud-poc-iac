@@ -26,7 +26,7 @@ module "api-gateway" {
   source                            = "../api-gateway"
   api_description                   = var.api_description
   api_name                          = var.api_name
-  create_permissions_set_invoke_arn = module.lambda_function_python['create-permission-set'].lambda_invoke_arn
+  create_permissions_set_invoke_arn = module.lambda_function_python["create-permission-set"].lambda_invoke_arn
 }
 
 module "dynamo-db" {
