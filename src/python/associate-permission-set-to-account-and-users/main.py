@@ -1,6 +1,6 @@
 import os
 import boto3
-
+# test comment
 def lambda_handler(event, context):
     # Retrieve environment variables
     sso_instance_arn = event['SSO_INSTANCE_ARN']
