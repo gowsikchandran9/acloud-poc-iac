@@ -28,7 +28,7 @@ phases:
 artifacts:
   files:
     - '**/*'
-# added comment
+# added
 cache:
   paths:
     - 'path/to/cache/directory'
