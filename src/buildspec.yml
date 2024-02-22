@@ -4,11 +4,11 @@ phases:
   pre_build:
     commands:
       - |
-        if [ -z "$(git diff --name-only HEAD HEAD~1 | grep 'infra/')" ]; then
-          echo "No Infra changes. Skipping build."
+        if [ -z "$(git diff --name-only HEAD HEAD~1 | grep 'src/')" ]; then
+          echo "No Python changes. Skipping build."
           exit 0
         else
-          echo "Infra changes detected. Running build."
+          echo "Python changes detected. Running build."
         fi
   install:
     commands:
