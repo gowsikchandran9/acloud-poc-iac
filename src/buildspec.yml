@@ -1,14 +1,18 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - |
+        if [ -z "$(git diff --name-only HEAD HEAD~1 | grep 'infra/')" ]; then
+          echo "No Infra changes. Skipping build."
+          exit 0
+        else
+          echo "Infra changes detected. Running build."
+        fi
   install:
     commands:
       - echo "Installing necessary dependencies"
-
-  pre_build:
-    commands:
-      - echo "pre_build"
-
   build:
     commands:
       - echo "Running build script"
