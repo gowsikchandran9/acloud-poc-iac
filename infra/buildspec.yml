@@ -21,7 +21,7 @@ phases:
       - terraform plan
       - echo "Running Terraform Apply..."
       - terraform apply -auto-approve
-
+# added comment
 artifacts:
   files:
     - '**/*'
