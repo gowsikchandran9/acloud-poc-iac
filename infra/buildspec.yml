@@ -31,14 +31,21 @@ phases:
           exit 0
         else
           echo "Infra changes detected. Running build."
+        cd infra/terraform/deployments/development/awsentry-api
+        echo "Running Terraform Init..."
+        terraform init
+        echo "Running Terraform Plan..."
+        terraform plan
+        echo "Running Terraform Apply..."
+        terraform apply -auto-approve
         fi
-      - cd infra/terraform/deployments/development/awsentry-api
-      - echo "Running Terraform Init..."
-      - terraform init
-      - echo "Running Terraform Plan..."
-      - terraform plan
-      - echo "Running Terraform Apply..."
-      - terraform apply -auto-approve
+#      - cd infra/terraform/deployments/development/awsentry-api
+#      - echo "Running Terraform Init..."
+#      - terraform init
+#      - echo "Running Terraform Plan..."
+#      - terraform plan
+#      - echo "Running Terraform Apply..."
+#      - terraform apply -auto-approve
 # added comment
 artifacts:
   files:

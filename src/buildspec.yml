@@ -10,17 +10,23 @@ phases:
           exit 0
         else
           echo "Python changes detected. Running build."
+          echo "Running build script"
+          cd src/python
+          chmod +x build-all.sh
+          pwd
+          ./build-all.sh $ACCOUNT_ID
+        
         fi
 #  install:
 #    commands:
 #      - echo "Installing necessary dependencies"
 #  build:
 #    commands:
-      - echo "Running build script"
-      - cd src/python
-      - chmod +x build-all.sh
-      - pwd
-      - ./build-all.sh $ACCOUNT_ID
+#      - echo "Running build script"
+#      - cd src/python
+#      - chmod +x build-all.sh
+#      - pwd
+#      - ./build-all.sh $ACCOUNT_ID
 
 #  post_build:
 #    commands:
