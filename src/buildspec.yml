@@ -11,20 +11,20 @@ phases:
         else
           echo "Python changes detected. Running build."
         fi
-  install:
-    commands:
-      - echo "Installing necessary dependencies"
-  build:
-    commands:
+#  install:
+#    commands:
+#      - echo "Installing necessary dependencies"
+#  build:
+#    commands:
       - echo "Running build script"
       - cd src/python
       - chmod +x build-all.sh
       - pwd
       - ./build-all.sh $ACCOUNT_ID
 
-  post_build:
-    commands:
-      - echo "Post-build steps"
+#  post_build:
+#    commands:
+#      - echo "Post-build steps"
 
 artifacts:
   files:

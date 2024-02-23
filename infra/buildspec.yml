@@ -2,15 +2,15 @@ version: 0.2
 env:
   git-credential-helper: yes
 phases:
-  pre_build:
-    commands:
-      - |
-        if [ -z "$(git diff --name-only HEAD HEAD~1 | grep 'infra/')" ]; then
-          echo "No Infra changes. Skipping build."
-          exit 0
-        else
-          echo "Infra changes detected. Running build."
-        fi
+#  pre_build:
+#    commands:
+#      - |
+#        if [ -z "$(git diff --name-only HEAD HEAD~1 | grep 'infra/')" ]; then
+#          echo "No Infra changes. Skipping build."
+#          exit 0
+#        else
+#          echo "Infra changes detected. Running build."
+#        fi
 
   install:
     runtime-versions:
@@ -25,6 +25,13 @@ phases:
 
   build:
     commands:
+      - |
+        if [ -z "$(git diff --name-only HEAD HEAD~1 | grep 'infra/')" ]; then
+          echo "No Infra changes. Skipping build."
+          exit 0
+        else
+          echo "Infra changes detected. Running build."
+        fi
       - cd infra/terraform/deployments/development/awsentry-api
       - echo "Running Terraform Init..."
       - terraform init
