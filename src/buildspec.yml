@@ -15,7 +15,6 @@ phases:
           chmod +x build-all.sh
           pwd
           ./build-all.sh $ACCOUNT_ID
-        
         fi
 #  install:
 #    commands:
@@ -35,7 +34,7 @@ phases:
 artifacts:
   files:
     - '**/*'
-# aa
+# a
 cache:
   paths:
     - 'path/to/cache/directory'
